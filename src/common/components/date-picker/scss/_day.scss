@@ -1,0 +1,10 @@
+.days {
+  @extend %wrap-selection-container;
+  .day{
+    @extend %wrap-selection-list;
+    @include num-of-columns($no-of-days-columns);
+    .day-button{
+      @extend %button-selection;
+    }
+  }
+}

@@ -1,0 +1,126 @@
+<div class="step-container landing" id="step_container">
+  <div class="form-wrapper step2" id="form_wrapper">
+    <div class="step-section" id="step_section">
+      <span class="step-copy" id="step_copy">{{getTranslations().KEY.CCREG.STEP.TWO | translate}}</span><br>
+    </div>
+    <div class="top-copy" id="top_copy">
+      <h1 class="title" id="title" tabindex="-1">{{getTranslations().KEY.CCREG.IDENTIFICATION.TITLE | translate}}</h1>
+      <span class="copy" id="copy">{{getTranslations().KEY.CCREG.IDENTIFICATION.COPY| translate}}</span>
+    </div>
+
+
+    <form novalidate [formGroup]="identificationFormGroup" autocomplete="off" class="step-form" id="step_form"
+          (ngSubmit)="submitIdentificationForm($event)">
+      <div class="inline-errors" *ngIf="errors?.length > 0">
+        <div class="has-error" *ngFor="let error of errors">
+          <img src="common/assets/images/delete.svg" id="delete_icon" alt="" aria-hidden="true">
+          {{ 'Something\'s not quite right. Please review the information you entered and try again. Make sure you didn\'t type any dashes or special characters (i.e., *, %, $, etc.).' | translate}}
+        </div>
+      </div>
+      <ng-container>
+        <div class="input-wrapper">
+          <bmo-ng-date-picker-input id="dateOfBirth"
+                                    label="{{getTranslations().KEY.CCREG.IDENTIFICATION.DATE_OF_BIRTH_TEXT  | translate}}"
+                                    datePickerControl="dateOfBirth" datePickerMode="Full"
+                                    [parentFormGroup]="identificationFormGroup"
+                                    [defaultDecade]="getCurrentYear()" [allowFutureDate]="false"
+                                    [validators]="SelfRegValidators.datePickerValidators"
+                                    [validationErrors]="SelfRegValidationErrors.datePickerValidationErrors"
+                                    (onStatus)="onDateChange($event)">
+          </bmo-ng-date-picker-input>
+
+        </div>
+      </ng-container>
+      <ng-container>
+        <div class="input-wrapper">
+          <text-input [controlName]="'postalCode'"
+                      [minLength]="6" [maxLength]="7"
+                      [parentFormGroup]="identificationFormGroup"
+                      [allowOnlyNumbers]="false"
+                      [textMask]="{mask: SelfRegMasks.PostalCodeMask, guide: false}"
+                      id="postalCode"
+                      [transform]="'uppercase'"
+                      [validators]="SelfRegValidators.postalCodeValidators"
+                      [validationErrors]="SelfRegValidationErrors.postalCodeValidationErrors"
+                      placeholder="{{getTranslations().KEY.CCREG.IDENTIFICATION.POSTAL_CODE_TEXT | translate}}"
+                      (copy)="onCopy($event)"
+                      (paste)="onPaste($event)">
+          </text-input>
+        </div>
+      </ng-container>
+
+      <ng-container>
+        <div class="input-wrapper">
+          <text-input [controlName]="'homePhone'"
+                      [inputType]="inputTypes.TEL"
+                      id="homePhone"
+                      placeholder="{{getTranslations().KEY.CCREG.IDENTIFICATION.HOME_PHONE_NUMBER_TEXT | translate}}"
+                      [parentFormGroup]="identificationFormGroup"
+                      [textMask]="{mask: SelfRegMasks.PhoneNumberMask, guide: false}"
+                      [minLength]="SelfRegFieldLengths.PhoneNumber.min"
+                      [maxLength]="SelfRegFieldLengths.PhoneNumber.max"
+                      [validators]="SelfRegValidators.phoneNumberValidators"
+                      [validationErrors]="SelfRegValidationErrors.homePhoneValidationErrors"
+                      (copy)="onCopy($event)"
+                      (paste)="onPaste($event)">
+          </text-input>
+        </div>
+      </ng-container>
+      <ng-container>
+
+        <div class="input-wrapper">
+          <text-input
+                      [controlName]="'businessPhone'"
+                      [inputType]="inputTypes.TEL"
+                      id="businessPhone"
+                      placeholder="{{getTranslations().KEY.CCREG.IDENTIFICATION.BUSINESS_PHONE_NUMBER_TEXT | translate}}"
+                      [parentFormGroup]="identificationFormGroup"
+                      [textMask]="{mask: SelfRegMasks.PhoneNumberMask, guide: false}"
+                      [minLength]="SelfRegFieldLengths.PhoneNumber.min"
+                      [maxLength]="SelfRegFieldLengths.PhoneNumber.max"
+                      [validators]="SelfRegValidators.phoneNumberValidators"
+                      [validationErrors]="SelfRegValidationErrors.businessPhoneValidationErrors"
+                      (copy)="onCopy($event)"
+                      (paste)="onPaste($event)">
+          </text-input>
+          <!-- <text-input class="form-control float-right "  matInput [controlName]="'businessExtn'"
+            [parentFormGroup]="identificationFormGroup" [allowOnlyNumbers]="false"
+            [textMask]="{mask: SelfRegMasks.PhoneExtensionMask, guide: false}" name="businessExtn"
+            [validators]="phoneExtensionValidators" [validationErrors]="phoneExtensionValidationErrors"
+            id="businessExtn" placeholder="{{getTranslations().KEY.CCREG.IDENTIFICATION.BUSINESS_EXTENSION_TEXT | translate}}" (blur)="handleOnBlur()"
+            (copy)="onCopy($event)" (paste)="onPaste($event)">
+          </text-input> -->
+        </div>
+
+      </ng-container>
+      <span class="button-wrapper margin-top-40" id="button_wrapper">
+        <app-round-button class="next-button"
+                          [enabled]="true"
+                          [disabled]="false"
+                          [buttonId]="'next_button'"
+                          [type]="'submit'"
+                          [fullTransparent]="false"
+                          [attr.data-ana]="getTranslations().KEY.CCREG.BUTTON.NEXT | translate | lowercase">
+          <span *ngIf="!loading">{{getTranslations().KEY.CCREG.BUTTON.NEXT | translate}}</span>
+          <mat-progress-spinner color="white" mode="indeterminate" *ngIf="loading"></mat-progress-spinner>
+
+        </app-round-button>
+      </span>
+      <!-- <div class="mdl-card__actions">
+        <span class="button-wrapper margin-top-40" id="button_wrapper">
+          <app-round-button class="next-button no-margin" [enabled]="true" [disabled]="loading"
+            [buttonId]="'next_button'" attr.data-ana="{{'NEXT' | translate | lowercase}}" [type]="'submit'"
+            [fullTransparent]="false">
+            <span *ngIf="!loading">{{'NEXT' | translate}}</span>
+            <mat-progress-spinner color="white" mode="indeterminate" *ngIf="loading"></mat-progress-spinner>
+          </app-round-button>
+        </span>
+      </div> -->
+    </form>
+    <div class="xl-spacer visible-sm"></div>
+  </div>
+  <div class="right-img mt-40" id="right_image">
+    <img src="common/assets/images/identity-card-passport@2x.png" alt="" *ngIf="width>480" id="desktop_img">
+    <img src="common/assets/images/id-badge.svg" alt="" *ngIf="width <= 480" id="mobile_img">
+  </div>
+</div>

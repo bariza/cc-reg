@@ -1,0 +1,49 @@
+@import "src/common/styles/variables";
+
+@import './scss/_abstract';
+@import './scss/_animation';
+
+/** config **/
+$min-width: 240px;
+$max-width: 100%;
+$no-of-months-columns: 3;
+$no-of-days-columns: 5;
+$no-of-years-columns: 3;
+
+.date-picker-container {
+  overflow: hidden;
+  background-color: $bmo-white;
+  height: 100%;
+  width: 100%;
+  min-width: $min-width;
+  max-width: $max-width;
+  box-shadow: 0 0 2px 0 rgba(0, 25, 40, 0.12), 0 2px 2px 0 rgba(0, 25, 40, 0.07);
+
+  @import './scss/header';
+
+  @import './scss/_month';
+  @import './scss/_day';
+  @import './scss/_year';
+
+  .date-picker-body {
+    display: inline-flex;
+    // expand the width to allow animation from transform
+    width: 200%;
+    &.date-picker-full-mode {
+      width: 300%;
+    }
+    // area of animaion
+    & > .date-picker-body-section {
+      width: 100%;
+    }
+
+    &.date-picker-part-mode
+      > .date-picker-body-section.date-picker-body-section-days {
+      width: 0px;
+    }
+  }
+}
+
+.hide-element {
+  visibility: hidden;
+}

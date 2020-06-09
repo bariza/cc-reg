@@ -1,0 +1,16 @@
+<footer id="footer" [ngStyle]="{'position': position, 'z-index': zIndex}">
+  <div class="footer-links" id="footer_links"  tabindex="0">
+    <ul class="footer-links-list"  id="footer-links-list">
+      <li><a href="{{getTranslations().KEY.CCREG.FOOTER.CONTACT_US | translate}}" target="_blank" id="contact_us" attr.data-ana="{{getTranslations().KEY.CCREG.FOOTER.CONTACT_US_TEXT | translate | lowercase}}">{{getTranslations().KEY.CCREG.FOOTER.CONTACT_US_TEXT  | translate }}</a></li>
+      <li><a href="{{getTranslations().KEY.CCREG.FOOTER.PRIVACY | translate}}" target="_blank" id="privacy" attr.data-ana="{{getTranslations().KEY.CCREG.FOOTER.PRIVACY_TEXT | translate | lowercase }}">{{getTranslations().KEY.CCREG.FOOTER.PRIVACY_TEXT | translate }}</a></li>
+      <li><a href="{{getTranslations().KEY.CCREG.FOOTER.LEGAL | translate}}" target="_blank" id="legal" attr.data-ana="{{getTranslations().KEY.CCREG.FOOTER.LEGAL_TEXT | translate | lowercase}}">{{getTranslations().KEY.CCREG.FOOTER.LEGAL_TEXT  | translate }}</a></li>
+      <li><a href="{{getTranslations().KEY.CCREG.FOOTER.SECURITY | translate}}" target="_blank" id="security" attr.data-ana="{{getTranslations().KEY.CCREG.FOOTER.SECURITY_TEXT | translate | lowercase }}">{{getTranslations().KEY.CCREG.FOOTER.SECURITY_TEXT | translate }}</a></li>
+      <li><a href="{{getTranslations().KEY.CCREG.FOOTER.CDIC_MEMBER| translate}}" target="_blank" id="cdic" attr.data-ana="{{getTranslations().KEY.CCREG.FOOTER.CDIC_MEMBER_TEXT | translate | lowercase}}">{{getTranslations().KEY.CCREG.FOOTER.CDIC_MEMBER_TEXT  | translate }}</a></li>
+      <li><a href="{{getTranslations().KEY.CCREG.FOOTER.CDIC_LINK | translate}}" target="_blank" id="cdic_logo" attr.data-ana="{{getTranslations().KEY.CCREG.FOOTER.CDIC_LINK | translate | lowercase}}">
+        <img alt="{{getTranslations().KEY.CCREG.FOOTER.CDIC_LOGO_TEXT}}" src="common/assets/images/cdic-logo.svg"/>
+      </a>
+      </li>
+
+    </ul>
+  </div>
+</footer>

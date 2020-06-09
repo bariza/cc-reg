@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>icon / 16px / error-red</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icon-/-16px-/-error-red" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-/-16px-/-multi_color-/-check_circle" transform="translate(8.000000, 8.000000) scale(1, -1) translate(-8.000000, -8.000000) " fill="#C81414">
+            <path d="M8,14 C11.3137085,14 14,11.3137085 14,8 C14,4.6862915 11.3137085,2 8,2 C4.6862915,2 2,4.6862915 2,8 C2,11.3137085 4.6862915,14 8,14 Z M8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 Z" id="Oval-2" fill-rule="nonzero"></path>
+            <rect id="Rectangle" x="7" y="7" width="2" height="5" rx="1"></rect>
+            <circle id="Oval" cx="8" cy="5" r="1"></circle>
+        </g>
+    </g>
+</svg>

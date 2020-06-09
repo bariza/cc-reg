@@ -1,0 +1,7 @@
+<div class="app-container" id="app-container" [attr.aria-hidden]="showDialog">
+  <app-navbar data-region="header"
+              [language]="language$ | async"
+              [currentLang]="appLanguage$ | async"></app-navbar>
+  <app-self-register data-region="main"></app-self-register>
+  <app-footer data-region="footer"></app-footer>
+</div>

@@ -1,0 +1,25 @@
+<div class="step-container landing" id="step_container">
+  <div class="form-wrapper" id="form_wrapper">
+    <div class="top-img mt-40" id="top_image">
+      <img src="common/assets/images/paper-plane.png" id="desktop_img" alt="">
+    </div>
+    <div class="top-copy mt-40" id="top_copy">
+      <h1 class="title" id="title" tabindex="0">{{getTranslations().KEY.CCREG.CONFIRMATION.TITLE | translate}}</h1>
+      <p class="copy" id="copy_1">{{getTranslations().KEY.CCREG.CONFIRMATION.COPY1 | translate}}</p>
+      <p class="copy" id="copy_2">{{getTranslations().KEY.CCREG.CONFIRMATION.COPY2 | translate}}</p>
+    </div>
+    <span class="button-wrapper margin-top-40" id="button_wrapper">
+              <app-round-button class="next-button" [enabled]="true"
+                                [disabled]="false"
+                                [buttonId]="'signIn_button'"
+                                [type]="'submit'" [fullTransparent]="false"
+                                (click)="submitConfirmation()"
+                                [attr.data-ana]="'SIGN IN' | translate | lowercase">
+                <span>{{getTranslations().KEY.CCREG.BUTTON.SIGN_IN | translate}}</span>
+<!--                <mat-spinner color="white" mode="indeterminate" [diameter]="40" *ngIf="loading"></mat-spinner>-->
+              </app-round-button>
+      </span>
+    <div class="xxl-spacer" *ngIf="width > 480"></div>
+  </div>
+</div>
+

@@ -1,0 +1,42 @@
+//year CSS
+.decade {
+  .years {
+    @extend %wrap-selection-container;
+    .year {
+      @extend %wrap-selection-list;
+      @include num-of-columns($no-of-years-columns);
+      .year-button {
+        @extend %button-selection;
+      }
+    }
+  }
+
+  .decade-header {
+    display: flex;
+    justify-content: center;
+    > .decade-header-label {
+      color: $bmo-slate;
+      width: 124px;
+      text-align: center;
+      font-family: $heebomedium;
+      font-size: 18px;
+      line-height: 32px;
+      letter-spacing: 0.32px;
+    }
+    .decade-back-button,
+    .decade-next-button {
+      @extend %clear-button-style;
+      width: 20px;
+      margin: 0 $spacing-xxsmall;
+      background-position: center center;
+      background-repeat: no-repeat;
+      &:focus {
+        @extend %outline-focus;
+      }
+    }
+    .decade-next-button.maxDecadeStyles,
+    .decade-back-button.minDecadeStyles {
+      cursor: default;
+    }
+  }
+}

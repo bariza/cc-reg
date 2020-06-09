@@ -1,0 +1,12 @@
+<div class="roundButton"
+     [class.enabled]="!disabled"
+     [class.transparent]="transparent"
+     [class.fullTransparent]="fullTransparent"
+     [class.highContrast]="highContrast">
+  <button mat-button [type]="type" [class.uppercase]="uppercase" [id]="buttonId" [disabled]="disabled"
+          [attr.aria-label]="ariaLabel">
+		<span>
+    <ng-content></ng-content>
+		</span>
+  </button>
+</div>

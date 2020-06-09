@@ -1,0 +1,57 @@
+/*Heebo BMO Webfont package generated on June 2, 2017 - Ryan Urquhart - UI Dev Lead */
+@font-face {
+        font-family: 'heebo-black';
+        font-display: swap; /* or block, swap, fallback */
+        src: local('heebo-black'),
+             url('../fonts/Heebo/Heebo-Black.ttf')  format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'heebo-bold';
+        font-display: swap; /* or block, swap, fallback */
+        src: local('heebo-bold'),
+             url('../fonts/Heebo/Heebo-Bold.ttf')  format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'heebo-extrabold';
+        font-display: swap; /* or block, swap, fallback */
+        src: local('heebo-extrabold'),
+             url('../fonts/Heebo/Heebo-ExtraBold.ttf')  format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'heebo-light';
+        font-display: swap; /* or block, swap, fallback */
+        src: local('heebo-light'),
+             url('../fonts/Heebo/Heebo-Light.ttf')  format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'heebo-medium';
+        font-display: swap; /* or block, swap, fallback */
+        src: local('heebo-medium'),
+             url('../fonts/Heebo/Heebo-Medium.ttf')  format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'heebo';
+        font-display: swap; /* or block, swap, fallback */
+        src: local('heebo'),
+             url('../fonts/Heebo/Heebo-Regular.ttf')  format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'heebo-thin';
+        font-display: swap; /* or block, swap, fallback */
+        src: local('heebo-thin'),
+             url('../fonts/Heebo/Heebo-Thin.ttf')  format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }

@@ -1,0 +1,10 @@
+.months {
+  @extend %wrap-selection-container;
+  .month{
+    @extend %wrap-selection-list;
+    @include num-of-columns($no-of-months-columns);
+    .month-button{
+      @extend %button-selection;
+    }
+  }
+}

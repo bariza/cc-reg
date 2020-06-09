@@ -1,0 +1,200 @@
+@import "src/common/styles/variables";
+
+// FIXME we should use bmo colors, we dont have those colors
+$bmo-light-grey: #929ba9;
+$input-field-underline-empty-not-focused: #d9dce1;
+$input-field-underline-focused: #005587;
+$input-field-underline-filled: #929ba9;
+$error-state: #c81414;
+$granite-gray: #646c76;
+
+@keyframes textFieldDefaultToInFocus {
+  0% {
+    background-color: $input-field-underline-empty-not-focused;
+  }
+  100% {
+    background-color: $input-field-underline-focused;
+  }
+}
+
+@keyframes textFieldDefaultToErrorState {
+  0% {
+    background-color: $input-field-underline-empty-not-focused;
+  }
+  100% {
+    background-color: $error-state;
+  }
+}
+
+@keyframes textFieldFocusedToFilledValid {
+  0% {
+    background-color: $input-field-underline-focused;
+  }
+  100% {
+    background-color: $input-field-underline-filled;
+  }
+}
+
+:host(text-input) ::ng-deep {
+  display: inline-block;
+  width: 100%;
+
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
+  textarea.mat-input-element {
+    resize: none;
+    overflow: hidden;
+  }
+
+  .mat-input-infix {
+    padding-top: 4px;
+    padding-bottom: 6px;
+  }
+
+  .mat-input-element[readonly]::selection {
+    background-color: transparent;
+  }
+
+  .mat-form-field {
+    font-family: $heebo;
+    font-size: $font-size-medium;
+    line-height: $font-size-xlarge;
+    width: 100%;
+
+    &:focus {
+      box-shadow: 0 0 4px 3px rgba(115, 195, 235, 0.85);
+    }
+
+    .mat-form-field-label {
+      color: $bmo-blue;
+      transition: transform 0.25s cubic-bezier(0.4, 0, 1, 1);
+
+      .mat-form-field-required-marker {
+        display: none;
+      }
+    }
+
+    &.mat-form-field-disabled .mat-form-field-label {
+      color: $bmo-granite;
+    }
+
+    &.fieldEmpty.ng-valid .mat-form-field-underline {
+      animation: textFieldFocusedToFilledValid 0.25s cubic-bezier(0, 0, 0.2, 1);
+      height: 2px;
+    }
+
+    &:not(.fieldEmpty) .mat-form-field-underline {
+      animation: textFieldFocusedToFilledValid 0.25s cubic-bezier(0, 0, 0.2, 1);
+      height: 2px;
+      background-color: $input-field-underline-empty-not-focused;
+    }
+
+    &.ng-valid:not(.fieldEmpty) .mat-form-field-underline {
+      animation: textFieldFocusedToFilledValid 0.25s cubic-bezier(0, 0, 0.2, 1);
+      height: 2px;
+      background-color: $input-field-underline-filled;
+    }
+  }
+
+  .mat-input-element {
+    &:disabled {
+      color: $bmo-granite;
+    }
+  }
+
+  .mat-form-field-underline {
+    bottom: 0px; // unset;
+    height: 2px;
+    background-color: $input-field-underline-empty-not-focused;
+  }
+  .mat-form-field-ripple {
+    background-color: $input-field-underline-empty-not-focused;
+    height: 2px;
+  }
+  .mat-form-field-wrapper {
+    padding-bottom: 0em;
+  }
+  .mat-form-field-invalid .mat-input-element,
+  .mat-warn .mat-input-element {
+    caret-color: $granite-gray;
+  }
+  .mat-form-field-invalid .mat-form-field-underline {
+    background-color: $error-state;
+  }
+
+  .mat-form-field-invalid .mat-form-field-underline .mat-form-field-ripple {
+    animation: textFieldDefaultToErrorState 0.25s cubic-bezier(0.4, 0, 1, 1);
+    height: 2px;
+    background-color: $error-state;
+  }
+  .mat-focused:not(.mat-form-field-invalid) .mat-form-field-underline .mat-form-field-ripple {
+    animation: textFieldDefaultToInFocus 0.25s cubic-bezier(0.4, 0, 1, 1);
+    background-color: $input-field-underline-focused;
+    height: 2px;
+  }
+
+  .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    width: 100%;
+    animation: 0.25s cubic-bezier(0.4, 0, 1, 1);
+    font-size: $font-size-small;
+    font-weight: 500;
+    line-height: $line-height-small;
+  }
+
+  .mat-form-field-disabled .mat-form-field-underline .mat-form-field-ripple {
+    background-color: $input-field-underline-empty-not-focused;
+    transform: none;
+    visibility: visible;
+    opacity: inherit;
+  }
+
+  .mat-hint {
+    margin-top: $spacing-xsmall;
+    // not compliant to AA
+    // color: $bmo-grey;
+    // compliant to AA
+    color: $bmo-granite;
+    // compliant to AAA
+    // color: $dark-grey;
+    font-family: $heebo;
+    font-weight: bold;
+    font-size: $font-size-xsmall;
+    letter-spacing: 0.35px;
+    line-height: $spacing-xsmall;
+  }
+
+  .error-container {
+    display: flex;
+    margin-top: $spacing-xxxsmall;
+    // line-height: $line-height-small;
+
+    .error-icon {
+      display: inline-block;
+      background: no-repeat;
+      height: $size-xxsmall;
+      width: $size-xxsmall;
+      background-size: contain;
+      margin-right: ($spacing-xxsmall / 2);
+    }
+
+    .base-input-error-text {
+      color: $error-state;
+      font-family: $heebo;
+      font-weight: 500;
+      font-size: $font-size-medium;
+      line-height: 1.14;
+    }
+  }
+
+
+  // FIXME this breaks the animation
+  // Daria: doesn't break animation. Fixes font size only
+  // TODO: revisit animation
+  // Fixes label font size to 14px
+  .mat-form-field-can-float .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label,
+  .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translateY(-1.28125em) scale(.75) perspective(100px) translateZ(.001px);
+  }
+}

@@ -1,0 +1,62 @@
+
+:host {
+  .step-container {
+    #form_wrapper {
+      @supports (-ms-accelerator:auto) {
+        width: 90%;
+        margin: 0 15px;
+        padding: 0 !important;
+      }
+
+      @supports (-ms-ime-align:auto) {
+        width: 90%;
+        margin: 0 15px;
+        padding: 0 !important;
+      }
+
+      @media screen\9
+      {
+        width: 90%;
+        margin: 0 15px;
+        padding: 0 !important;
+      }
+
+      @media screen\0
+      {
+        width: 90%;
+        margin: 0 15px;
+        padding: 0 !important;
+      }
+
+      @media (max-width: 550px) {
+        padding: 0 32px;
+      }
+
+      @media all and (min-width: 551px) {
+        width: 500px;
+      }
+
+      .top-img {
+        text-align: center;
+      }
+
+      .top-copy {
+        text-align: center;
+      }
+    }
+
+
+
+    .button-wrapper {
+      display: flex;
+      flex-direction: row;
+      margin-top: 42px;
+      @media all and (max-width: 2000px) {
+        flex-direction: column-reverse;
+        align-items: center;
+        margin-top: 32px;
+      }
+    }
+  }
+}
+

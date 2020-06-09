@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="95px" height="63px" viewBox="0 0 95 63" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+    <title>credit card icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="credit-card-icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="96x72_card-copy" transform="translate(0.000000, -1.000000)">
+            <polygon id="Path-5" fill="#FFFFFF" fill-rule="nonzero" points="5.08 2.44 89.8 2.44 93.33 4.67 93.33 59.49 90.68 63.05 4.2 63.05 1.11 59.49 1.11 6.01 2.43 3.33"></polygon>
+            <path d="M0.669954586,23.84 C9.92333333,17.9466667 25.0733333,14.8266667 46.12,14.48 C67.5933333,14.48 83.33,17.8966667 93.3301024,24.73 L93.3301024,6.9 C93.3379835,5.72508287 92.8788921,4.59511874 92.0537262,3.75870061 C91.2285603,2.92228248 90.1049175,2.44792961 88.93,2.44 L5.08,2.44 C3.90508723,2.44529237 2.78039955,2.91710644 1.95336154,3.75164593 C1.12632353,4.58618542 0.66468368,5.71508733 0.669954586,6.89 L0.669954586,6.89 L0.669954586,23.84 Z" id="Path-8" fill="#BEE5FE" fill-rule="nonzero"></path>
+            <path d="M0.669897593,17.59 L0.669897593,6.9 C0.662016508,5.72508287 1.12110794,4.59511874 1.9462738,3.75870061 C2.77143967,2.92228248 3.89508251,2.44792961 5.07,2.44 L76.9,2.44" id="Rectangle-5" stroke="#0079C1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M93.3300454,39 L93.3300454,58.6 C93.3353163,59.7749127 92.8736765,60.9038146 92.0466385,61.7383541 C91.2196004,62.5728936 90.0949128,63.0447076 88.92,63.05 L5.08,63.05 C3.90508723,63.0447076 2.78039955,62.5728936 1.95336154,61.7383541 C1.12632353,60.9038146 0.66468368,59.7749127 0.669954586,58.6 L0.669954586,58.6" id="Rectangle-5-2" stroke="#001928" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M30.23,63.05 L5.08,63.05 C3.90508723,63.0447076 2.78039955,62.5728936 1.95336154,61.7383541 C1.12632353,60.9038146 0.66468368,59.7749127 0.669954586,58.6 L0.669954586,58.6 L0.669954586,17.6" id="Rectangle-5-Copy-2" stroke="#005587" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M76.9,2.44 L88.9,2.44 C90.0749128,2.44529237 91.1996004,2.91710644 92.0266385,3.75164593 C92.8536765,4.58618542 93.3153163,5.71508733 93.3100454,6.89 L93.3100454,6.89 L93.3100454,39" id="Rectangle-5-Copy" stroke="#73C3EB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+            <line x1="9.49" y1="46.52" x2="83.18" y2="46.52" id="Path-7" stroke="#0079C1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></line>
+            <line x1="9.49" y1="54.89" x2="21.27" y2="54.89" id="Path-7-2" stroke="#001928" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></line>
+            <line x1="28.9" y1="54.89" x2="40.68" y2="54.89" id="Path-7-3" stroke="#0074C0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></line>
+            <line x1="48.62" y1="46.52" x2="85.24" y2="46.52" id="Path-7-Copy" stroke="#005587" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></line>
+            <path d="M11.56,38.49 C10.6515435,38.479328 9.91616088,37.7483754 9.89987972,36.84 L9.89987972,28.69 C9.89466682,28.2453616 10.0668832,27.8169568 10.3784844,27.4997243 C10.6900855,27.1824918 11.1153374,27.0026307 11.56,27 L23.56,27 C24.002914,27.0026442 24.4266361,27.1811312 24.7379482,27.496194 C25.0492603,27.8112569 25.2226601,28.2370861 25.2200302,28.68 L25.2200302,28.68" id="Path" stroke="#73C3EB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M25.2200311,28.69 L25.2200311,36.84 C25.2255652,37.7639768 24.4839283,38.5190168 23.56,38.53 L11.56,38.53" id="Path" stroke="#73C3EB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M77,3.93 C76.18054,4.04285829 75.4243898,3.47102519 75.3098079,2.65180444 C75.1952259,1.83258368 75.765467,1.07523221 76.5844449,0.958927103 C77.4034228,0.842621996 78.1619723,1.41126859 78.28,2.23 C78.3873038,3.050641 77.8183312,3.8063077 77,3.93 Z" id="Fill-36-Copy" fill="#001928" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

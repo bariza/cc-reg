@@ -1,0 +1,102 @@
+@keyframes showup {
+  from {
+    height: 57px;
+  }
+  to {
+    height: 312px;
+  }
+}
+
+@keyframes onCloseAnimate {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    height: 57px;
+  }
+}
+
+@keyframes animateMonthHeader {
+  from {
+    opacity: 0;
+    transform: translateX(0px);
+    transition: transform 0.2s cubic-bezier(0, 0, 0.2, 1), opacity 0.2s;
+  }
+  to {
+    transform: translateX(0px);
+    transition: transform 0.2s cubic-bezier(0, 0, 0.2, 1), opacity 0.2s;
+    opacity: 1;
+  }
+}
+
+@keyframes animateDayHeader {
+  from {
+    opacity: 0;
+    transform: translateX(0px);
+    transition: transform 0.2s cubic-bezier(0, 0, 0.2, 1), opacity 0.2s;
+  }
+  to {
+    transform: translateX(0px);
+    transition: transform 0.2s cubic-bezier(0, 0, 0.2, 1), opacity 0.2s;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInFadeOut {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.showPickerAnimation {
+  animation: 0.15s cubic-bezier(0, 0, 0.2, 1) showup;
+}
+
+.animateOnClose {
+  animation: 0.15s cubic-bezier(0.4, 0, 1, 1) onCloseAnimate;
+}
+
+.date-picker-body {
+  padding-bottom: $spacing-xsmall;
+
+  &.animateMonths,
+  &.animateYearsModePart,
+  &.animateDays,
+  &.animateYearsModeFull {
+    transition: all 0.5s cubic-bezier(0, 0, 0.2, 1);
+    transition-property: transform, max-height;
+  }
+
+  &.animateMonths {
+    max-height: 160px;
+  }
+
+  &.animateYearsModePart,
+  &.animateYearsModeFull {
+    max-height: 200px;
+  }
+
+  &.animateDays {
+    max-height: 800px;
+  }
+
+  &.animateMonths {
+    transform: translateX(0%) translateZ(0);
+  }
+
+  &.animateYearsModePart {
+    transform: translateX(-50%) translateZ(0);
+  }
+
+  &.animateDays {
+    transform: translateX(-33.33%) translateZ(0);
+  }
+
+  &.animateYearsModeFull {
+    transform: translateX(-66.67%) translateZ(0);
+  }
+}

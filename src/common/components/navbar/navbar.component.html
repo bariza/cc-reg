@@ -1,0 +1,22 @@
+<header class="mdl-layout__header" id="header" tabindex="-1">
+  <a href="javascript:void(0)" (click)="goToContent()" class="for-screenreader" title="{{'Skip to content' | translate}}">{{'Skip to content' | translate}}</a>
+  <div class="mdl-layout__header-row" id="header_row">
+    <span class="mdl-layout-title">
+      <a href="{{BMOLink}}">
+              <img [src]="LOGO" alt="{{'Bank of Montreal' | translate}}" class="logo" id="logo">
+      </a>
+    </span>
+    <div class="for-screenreader" aria-live="polite" [attr.aria-hidden]="!showLanguage">
+      <div *ngIf="currentLang == 'en'">
+        <span>Language currently set to English</span>
+      </div>
+      <div *ngIf="currentLang == 'fr'">
+        <span>Langue est actuellement configuré en Français</span>
+      </div>
+    </div>
+    <nav class="mdl-navigation" *ngIf="showLanguage" id="mdl-navigation">
+      <a href="javascript:void(0)" class="mdl-navigation__link pointer no-decoration" (click)="setLanguage(language)"
+         title="{{'Passer à Français' | translate}}" id="language">{{ language }}</a>
+    </nav>
+  </div>
+</header>

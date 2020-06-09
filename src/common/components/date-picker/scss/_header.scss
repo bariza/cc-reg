@@ -1,0 +1,60 @@
+@mixin animateHeader($type ) {
+  animation: .2s cubic-bezier(0, 0, 0.2, 1) $type;
+  opacity: 1;
+}
+
+.date-picker-header-container{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  border-bottom: 2px solid $bmo-lightgrey;
+  margin: 0px $spacing-xsmall $spacing-xsmall;
+  padding: $spacing-xsmall 0px $spacing-xxsmall;
+
+  .date-picker-header {
+    flex: 2 1 auto;
+    text-align: center;
+    .header-label {
+      color: $bmo-slate;
+      font-family: $heebomedium;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 32px;
+      opacity: 1;
+      letter-spacing: 0.15px;
+    }
+
+    &.animateMonthPickerHeader,
+    &.animateYearPickerHeader {
+      @include animateHeader('animateDayHeader');
+    }
+    &.animateDayPickerHeader {
+      @include animateHeader('animateYearHeader');
+    }
+    &.reverseDays {
+      @include animateHeader('animateDayHeaderReverse');
+    }
+    &.reverseYears {
+      @include animateHeader('animateYearHeaderReverse');
+    }
+  }
+
+  .close-button,
+  .back-button,
+  .back-button > button {
+    @extend %clear-button-style;
+    height: $spacing-small;
+    width: $spacing-small;
+    &:focus{
+      @extend %outline-focus;
+    }
+  }
+
+  .back-button{
+    margin-left: -($spacing-xxsmall);
+  }
+
+  .close-button{
+    margin-right: -($spacing-xxsmall);
+  }
+}

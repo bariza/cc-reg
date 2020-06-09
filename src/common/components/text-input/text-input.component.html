@@ -1,0 +1,67 @@
+<div class="base-input-container" #inputFieldContainer>
+  <mat-form-field
+    [disabled]="disabled"
+    [ngClass]="{ 'fieldEmpty': !value, 'cursor-pointer': ariaInputRole }"
+  >
+    <input
+      matInput
+      onlyNumbers
+      autocomplete="off"
+      trim="blur"
+      [readonly]="readonly"
+      [id]="id + '-element'"
+      [placeholder]="placeholder"
+      [type]="inputType"
+      [formControlName]="controlName"
+      [value]="value"
+      [maxlength]="maxLength"
+      [minlength]="minLength"
+      [allowNumbers]="allowOnlyNumbers"
+      [attr.aria-hidden]="readonly"
+      [attr.aria-describedby]="id + '-error-element'"
+      [required]="required"
+      [errorStateMatcher]="errorMatcher"
+      (focus)="inputFocus.emit($event.target.value)"
+      (blur)="inputBlur.emit($event.target.value)"
+      (ngModelChange)="onNgModelChange($event)"
+      (input)="applyTransform($event)"
+     
+    >
+    <textarea
+      *ngIf="wrapInputFieldText"
+      matInput
+      matTextareaAutosize
+      aria-hidden="true"
+      [id]="id + '-element'"
+      [placeholder]="placeholder"
+      [formControlName]="controlName"
+      [value]="value"
+      [required]="required"
+      [readonly]="true"
+      [errorStateMatcher]="errorMatcher"
+      [attr.aria-describedby]="id + '-error-element'"
+      (ngModelChange)="onNgModelChange($event)"
+    ></textarea>
+    <mat-icon *ngIf="showMatSuffix" matSuffix>
+      <ng-content></ng-content>
+    </mat-icon>
+  </mat-form-field>
+
+  <mat-hint *ngIf="hintText && !showInputError()">{{hintText}}</mat-hint>
+
+  <mat-error *ngIf="showInputError()">
+    <div class="error-container">
+      <img
+        class="error-icon"
+        src="common/assets/images/inline_error_icon.svg"
+        [attr.alt]="validationError?.message"
+        aria-hidden="true"
+      />
+      <div
+        [attr.id]="id + '-error-element'"
+        class="base-input-error-text"
+      >{{validationError?.message | translate}}</div>
+    </div>
+  </mat-error>
+
+</div>

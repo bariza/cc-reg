@@ -1,0 +1,117 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.roundButton {
+  overflow: hidden;
+  height: 3.5rem;
+  background-color: $bmo-blue;
+  border-radius: $round-button-border-radius;
+
+  button.uppercase {
+    text-transform: uppercase;
+  }
+
+  button {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    color: $bmo-white;
+    border-radius: $round-button-border-radius;
+    background: transparent;
+    border: none;
+
+    span {
+      pointer-events: none;
+      @include font-size-small;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  :active, :hover {
+    //background-color: $bmo-ultramarine;
+  }
+
+  &.transparent {
+    background-color: transparent;
+    border: 2px solid $bmo-blue;
+
+    button {
+      color: $bmo-blue;
+    }
+  }
+
+  &.transparent:active {
+    border: 2px solid $bmo-ultramarine;
+    background-color: $bmo-ultramarine;
+    button {
+      color: $bmo-white;
+    }
+  }
+
+  &.fullTransparent {
+    border: none;
+    background-color: transparent;
+
+    button {
+      color: $bmo-blue;
+
+      &:hover {
+        background-color: #e0e0e0;
+      }
+
+      &:focus {
+        border: 3px solid #85BFFD;
+        //outline: -webkit-focus-ring-color auto 5px;
+      }
+    }
+
+    :active {
+      background-color: transparent;
+
+      button {
+        color: $bmo-blue;
+      }
+    }
+  }
+
+  &.highContrast {
+    background-color: $bmo-white;
+    border: 2px solid $bmo-white;
+
+    button {
+      color: $bmo-blue;
+    }
+  }
+
+  &.highContrast:active {
+    border: 2px solid $bmo-ultramarine;
+    background-color: $bmo-ultramarine;
+    button {
+      color: $bmo-white;
+    }
+  }
+
+  &.disabled, &.disabled:active, &.disabled:active button {
+    background-color: $bmo-granite;
+    pointer-events: none;
+    color: $bmo-white;
+  }
+
+  ::ng-deep .mat-progress-spinner, .mat-spinner {
+    circle {
+      stroke: $bmo-white;
+    }
+    margin: 0 auto;
+  }
+}
+
+

@@ -1,0 +1,123 @@
+/* Color palette */
+$bmo-blue: #0079c1;
+$bmo-bluea: #0075be;
+$bmo-slate: #001928;
+$bmo-white: #ffffff;
+$bmo-cerulean: #73c3eb;
+$bmo-azure: #bedceb;
+$bmo-lightgrey: #d9dce1;
+$bmo-ultramarine: #005587;
+$bmo-albicant: #f5f6f7;
+$bmo-red: #ed1c24;
+$bmo-negative: #c81414;
+$bmo-positive: #0b8224;
+$bmo-skyblue: #009ec9;
+$bmo-poolside: #2cbfc1;
+$bmo-olive: #c3c070;
+$bmo-sunflower: #ffc827;
+$bmo-maraschino: #e9425f;
+$bmo-lilac: #6a88c3;
+$bmo-orchid: #d061a1;
+$bmo_retrospect: #00e7b4;
+$bmo-granite: #646c76;
+$bmo-radio-grey: #929ba9;
+$bmo-lightblue: #85BFFD;
+$round-button-border-radius: 30px;
+
+/************************************/
+/**************Z-Index Stack*********/
+/************************************/
+
+$zindex-sticky:            1020 !default;
+$zindex-fixed:             1030 !default;
+$zindex-overlay:           1040 !default;
+$zindex-dropdown:          1045 !default;
+$zindex-modal:             1050 !default;
+$zindex-popover:           1060 !default;
+
+/************************************/
+/********GRID SCREEN SIZES***********/
+/************************************/
+
+$xsm-screen-min: 0px;
+$xsm-screen-max: 374px;
+$sm-screen-min: 375px;
+$sm-screen-max: 599px;
+$md-screen-min: 600px;
+$md-screen-max: 767px;
+$lg-screen-min: 768px;
+$lg-screen-max: 1023px;
+$xl-screen-min: 1024px;
+$xl-screen-max: 1279px;
+$xxl-screen-min: 1280px;
+$default-screen-max: 1280px;
+
+/************************************/
+/***********LINE HEIGHT**************/
+/************************************/
+
+$line-height-xsmall:        1.4rem;
+$line-height-small:         1.5rem;
+$line-height-medium:        2.0rem;
+$line-height-large:         1.7rem;
+$line-height-xlarge:        2.2rem;
+$line-height-xxlarge:       2.5rem;
+$line-height-xxxlarge:      2.8rem;
+$line-height-xxxxlarge:     3.4rem;
+$line-height-xgrand:        4.0rem;
+$line-height-grand:         5.0rem;
+
+/************************************/
+/**************FONT SIZE*****************/
+/************************************/
+$font-size-xxxxlarge: 2.4rem;
+$font-size-xxxlarge: 2rem;
+$font-size-xxlarge: 1.8rem;
+$font-size-xlarge: 1.4rem;
+$font-size-large: 1.2rem;
+$font-size-medium: 1rem;
+$font-size-small: 0.8rem;
+$font-size-xsmall: 0.6rem;
+$font-size-xxsmall: 0.4rem;
+$font-size-xxxsmall: 0.2rem;
+$input-field-font-size: 17px;
+
+/************************************/
+/**************FONT FAMILY***************/
+/************************************/
+$heebobold: 'heebo-bold';
+$heebomedium: 'heebo-medium';
+$heebo: 'heebo';
+$heebolight: 'heebo-light';
+
+/************************************/
+/**************SPACING***************/
+/************************************/
+$spacing-xxxxsmall: 4px;
+$spacing-xxxsmall: 8px;
+$spacing-xxsmall: 16px;
+$spacing-xsmall: 24px;
+$spacing-small: 32px;
+$spacing-medium: 40px;
+$spacing-large: 48px;
+$spacing-xlarge: 80px;
+$spacing-xxlarge: 120px;
+
+/************************************/
+/***********SIZE HEIGHT**************/
+/************************************/
+
+$size-zero:          0;
+$size-xxxsmall:      8px;
+$size-xxsmall:       16px;
+$size-xsmall:        24px;
+$size-small:         32px;
+$size-xmedium:       40px;
+$size-xxmedium:      48px;
+$size-medium:        56px;
+$size-large:         64px;
+$size-xlarge:        80px;
+$size-xxlarge:       112px;
+$size-xxxlarge:      136px;
+$size-grand:         152px;
+$size-xxxgrand:      1096px;

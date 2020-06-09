@@ -1,0 +1,150 @@
+@import '../../../common/styles/variables';
+
+.info-box {
+  position: absolute;
+  top: 100px;
+  padding: 32px 24px;
+  z-index: 9;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px 0 rgba(0, 25, 40, 0.07), 0 0 2px 0 rgba(0, 25, 40, 0.21);
+  border-image-source: linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0) 80%, rgba(0, 0, 0, 0.02) 95%, rgba(0, 0, 0, 0.06));
+  border-image-slice: 1;
+  border: 1px solid #F5F6F7;
+
+  &.has-error {
+    top: 124px;
+
+    @media all and (max-width: 480px){
+      top: 132px;
+    }
+
+    @media all and (max-width: 400px){
+      top: 146px;
+    }
+  }
+
+  @media all and (min-width: 481px){
+    &:before {
+      position:absolute;
+      top:-10px;
+      right:194px;
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid white;
+      z-index:2;
+    }
+    &:after {
+      position: absolute;
+      top: -13px;
+      right: 192px;
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-bottom: 12px solid rgba(0, 0, 0, 0.09);
+      z-index: 1;
+    }
+  }
+
+  @media all and (min-width: 768px) {
+    &:before {
+      right: 194px;
+    }
+
+    &:after {
+      right: 192px;
+    }
+  }
+
+  @media all and (max-width: 480px){
+    height: 160px;
+    top: 94px;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  @media all and (max-width: 400px){
+    height: 140px;
+    top: 112px;
+  }
+
+  @media all and (max-width: 360px){
+    height: 124px;
+  }
+
+  &.tooltip-fr {
+    right: 0;
+    &:before {
+      right: 27px;
+    }
+    &:after {
+      right: 25px;
+    }
+
+    @media all and (min-width: 481px) and (max-width: 768px){
+      &.tooltip-fr {
+        &:before {
+          right: 27px;
+        }
+        &:after {
+          right: 25px;
+        }
+      }
+    }
+
+    @media all and (max-width: 480px) {
+      height: 168px;
+      top: 116px;
+    }
+
+    @media all and (max-width: 400px) {
+      height: 130px;
+      top: 132px;
+    }
+
+    @media all and (max-width: 340px) {
+      height: 120px;
+    }
+
+    &.has-error {
+      @media all and (max-width: 480px){
+        top: 154px;
+      }
+      @media all and (max-width: 340px) {
+        top: 120px;
+      }
+    }
+  }
+
+  .close-icon {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 16px;
+    height: 16px;
+    &:focus {
+      border: 1px solid #85BFFD;
+    }
+  }
+
+  .tooltip-title {
+    top: 15px;
+    left: 15px;
+    font-size: 14px;
+    color: $bmo-slate;
+  }
+
+  img.cheque-img {
+    @media all and (max-width: 480px){
+      width: 100%;
+      max-width: 327px;
+    }
+  }
+
+}

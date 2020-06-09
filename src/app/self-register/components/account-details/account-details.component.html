@@ -1,0 +1,91 @@
+<div class="step-container landing" id="step_container">
+  <div class="form-wrapper" id="form_wrapper">
+    <div class="step-section" id="step_section">
+      <span class="step-copy" id="step_copy">{{getTranslations().KEY.CCREG.STEP.ONE  | translate}}</span><br>
+    </div>
+    <div class="top-copy" id="top_copy">
+      <h1 class="title" id="title" tabindex="-1">{{getTranslations().KEY.CCREG.ACCOUNT_DETAILS.TITLE  | translate}}</h1>
+      <span class="copy" id="copy">{{getTranslations().KEY.CCREG.ACCOUNT_DETAILS.COPY  | translate}}</span>
+    </div>
+    <form [formGroup]="accountDetailsFormGroup" class="step-form" id="step_form"
+          novalidate autocomplete="off" (ngSubmit)="submitAccountDetailsForm($event)">
+      <div class="inline-errors" *ngIf="errors?.length > 0">
+        <div class="has-error" *ngFor="let error of errors">
+          <img src="common/assets/images/delete.svg" id="delete_icon" alt="">
+          {{ error.displayText | translate}}
+        </div>
+      </div>
+      <div class="input-wrapper">
+        <text-input
+          [inputType]="inputTypes.TEL"
+          [controlName]="'creditCardNumber'"
+          [minLength]="SelfRegFieldLengths.CardNumber.min"
+          [maxLength]="SelfRegFieldLengths.CardNumber.max"
+          [parentFormGroup]="accountDetailsFormGroup"
+          [textMask]="{mask: SelfRegMasks.CreditCardMask, guide: false}"
+          [validators]="creditCardNumberValidators"
+          [validationErrors]="creditCardNumberValidationErrors"
+          id="creditCardNumber"
+          placeholder="{{getTranslations().KEY.CCREG.ACCOUNT_DETAILS.CARD_NUMBER_TEXT  | translate}}"
+          (copy)="onCopy($event)"
+          (paste)="onPaste($event)">
+        </text-input>
+
+        <!--        <app-inline-error-->
+        <!--          *ngIf="getFieldErrors('creditCardNumber')"-->
+        <!--          errorMsg="Please enter all 16 digits of your Credit Card number"-->
+        <!--          errorId="card_error">-->
+        <!--        </app-inline-error>-->
+      </div>
+      <div class="input-wrapper">
+          <bmo-ng-date-picker-input
+            id="expiryDate"
+            label="{{getTranslations().KEY.CCREG.ACCOUNT_DETAILS.EXPIRY_DATE_TEXT  | translate}}"
+            datePickerControl="expiryDate"
+            datePickerMode="Part"
+            [parentFormGroup]="accountDetailsFormGroup"
+            [defaultDecade]="getCurrentYear()"
+            [allowFutureDate]="true"
+            [validators]="datePickerValidators"
+            [validationErrors]="datePickerValidationErrors"
+            (onStatus)="onDateChange($event)"
+          ></bmo-ng-date-picker-input>
+      </div>
+      <div class="input-wrapper">
+        <text-input
+          [inputType]="inputTypes.TEL"
+          [controlName]="'cvcNumber'"
+          [minLength]="SelfRegFieldLengths.CvcNumber.min"
+          [maxLength]="SelfRegFieldLengths.CvcNumber.max"
+          [textMask]="{mask: SelfRegMasks.CVCNumberMask, guide: false}"
+          [parentFormGroup]="accountDetailsFormGroup"
+          [validators]="CVCNumberValidators"
+          [validationErrors]="CVCNumberValidationErrors"
+          id="cvcNumber"
+          placeholder="{{getTranslations().KEY.CCREG.ACCOUNT_DETAILS.CVC_NUMBER_TEXT  | translate}}"
+          (onCopy)="onCopy($event)"
+          (onPaste)="onPaste($event)">
+        </text-input>
+        <info-text messageHeader= "{{getTranslations().KEY.CCREG.ACCOUNT_DETAILS.INFO_TEXT_HEADER  | translate}}"
+                 messageBody="{{getTranslations().KEY.CCREG.ACCOUNT_DETAILS.INFO_TEXT | translate}}">
+        </info-text>
+      </div>
+      <span class="button-wrapper margin-top-40" id="button_wrapper">
+              <app-round-button class="next-button" [enabled]="true"
+                                [disabled]="false"
+                                [buttonId]="'next_button'"
+                                [type]="'submit'" [fullTransparent]="false"
+                                [attr.data-ana]="'NEXT' | translate | lowercase">
+                <span *ngIf="!loading">{{getTranslations().KEY.CCREG.BUTTON.NEXT | translate}}</span>
+                <mat-spinner color="white" mode="indeterminate" [diameter]="40"  *ngIf="loading"></mat-spinner>
+              </app-round-button>
+      </span>
+    </form>
+    <div class="xl-spacer visible-sm"></div>
+  </div>
+  <div class="right-img mt-40" id="right_image">
+    <img src="common/assets/images/card-cheque.svg" *ngIf="width > 480" id="desktop_img" alt="">
+    <img src="common/assets/images/card-sliced.svg" *ngIf="width <= 480" id="mobile_img" alt="">
+  </div>
+</div>
+

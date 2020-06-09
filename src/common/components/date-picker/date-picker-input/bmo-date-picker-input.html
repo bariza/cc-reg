@@ -1,0 +1,57 @@
+<div class="date-picker-component-container">
+  <div
+    *ngIf="displayDate"
+    [id]="id + '-header-label'"
+    class="date-picker-input-label"
+    [attr.aria-label]="label + ' ' + displayDate"
+    tabindex="0">
+    {{ label | translate }}
+  </div>
+  <div class="input-field-placeholders" aria-hidden="true" tabindex="-1">
+    <button [ngClass]="{'placeholder-value': displayDate}" class="placeholder-label" (click)="onClickShow()">
+      {{ getPlaceholderOrValue() | translate }}
+    </button>
+  </div>
+  <div class="date-picker-input-wrapper">
+    <text-input
+      tabindex="0"
+      [id]="id"
+      [ngClass]="{
+        'date-picker-focused': showPicker,
+        'date-picker-filled': dateSelected
+      }"
+      showMatSuffix="true"
+      readonly="true"
+      [ariaInputRole]="'button'"
+      [placeholder]="label"
+      [parentFormGroup]="parentFormGroup"
+      [controlName]="datePickerControl"
+      [value]="outputDate"
+      [validators]="validators"
+      [validationErrors]="validationErrors"
+      (click)="onClickShow()"
+      (keyup.space)="onClickShow()">
+      <img
+        src="common/assets/images/calendar.svg"
+        alt=""
+        class="calendar-icon"
+        aria-hidden="true"/>
+    </text-input>
+  </div>
+  <bmo-ng-bmo-date-picker
+    #bmoDatePickerRef
+    [selectedMonth]="month"
+    [selectedDay]="day"
+    [selectedYear]="year"
+    [showDatePicker]="showPicker"
+    [datePickerMode]="datePickerMode"
+    [defaultDecade]="defaultDecade"
+    [showFutureDate]="allowFutureDate"
+    [maxYearsInFuture]="maxYearsInFuture"
+    (showPickerEmitter)="onClickHide($event)"
+    (month)="onMonthSelect($event)"
+    (day)="onDaySelect($event)"
+    (year)="onYearSelect($event)"
+  >
+  </bmo-ng-bmo-date-picker>
+</div>

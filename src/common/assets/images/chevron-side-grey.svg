@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon / 24px / chevron-side-grey</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icon-/-24px-/-chevron-side-grey" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle-7" fill="#F5F6F7" opacity="0" x="0" y="0" width="32" height="32"></rect>
+        <path d="M9.68430419,12.2407615 C9.25647029,11.8813394 8.61236132,11.9299009 8.24564654,12.3492268 C7.87893177,12.7685526 7.92847861,13.3998526 8.35631252,13.7592747 L15.4983415,19.7592747 C15.8804296,20.0802659 16.4442451,20.0802659 16.8263332,19.7592747 L23.9683622,13.7592747 C24.3961961,13.3998526 24.4457429,12.7685526 24.0790281,12.3492268 C23.7123134,11.9299009 23.0682044,11.8813394 22.6403705,12.2407615 L16.1623373,17.6829404 L9.68430419,12.2407615 Z" id="chevron" fill="#929BA9" fill-rule="nonzero" transform="translate(16.162337, 16.000009) scale(-1, 1) rotate(90.000000) translate(-16.162337, -16.000009) "></path>
+    </g>
+</svg>

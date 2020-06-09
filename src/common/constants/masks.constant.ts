@@ -1,0 +1,43 @@
+export const SelfRegMasks = {
+  CreditCardMask: [
+    /\d/,
+    /\d/,
+    /\d/,
+    /\d/,
+    " ",
+    /\d/,
+    /\d/,
+    /\d/,
+    /\d/,
+    " ",
+    /\d/,
+    /\d/,
+    /\d/,
+    /\d/,
+    " ",
+    /\d/,
+    /\d/,
+    /\d/,
+    /\d/
+  ],
+  CVCNumberMask: [/\d/, /\d/, /\d/],
+  NumberOfAccountsMask: [/\d/, /\d/],
+  PostalCodeMask: [/[a-zA-Z]/, /\d/, /[a-zA-Z]/, " ", /\d/, /[a-zA-Z]/, /\d/],
+  PhoneNumberMask: [
+    '(',
+    /\d/,
+    /\d/,
+    /\d/,
+    ')',
+    " ",
+    /\d/,
+    /\d/,
+    /\d/,
+    "-",
+    /\d/,
+    /\d/,
+    /\d/,
+    /\d/
+  ],
+  PhoneExtensionMask: [/\d/, /\d/, /\d/]
+};

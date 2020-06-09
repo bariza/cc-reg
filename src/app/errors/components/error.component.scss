@@ -1,0 +1,64 @@
+@import '../../../common/styles/variables';
+@import '../../../common/styles/mixins';
+
+.confirmation-wrapper {
+  text-align: center;
+  padding: 0 32px;
+
+  #top_copy {
+    max-width: 343px;
+
+    p {
+      margin: 0;
+    }
+
+    .title {
+      font-family: $font-stack-bold;
+      font-size: 28px;
+      line-height: 1.43;
+      letter-spacing: -0.2px;
+    }
+
+    .copy {
+      font-family: $font-stack;
+      font-size: 16px;
+      line-height: 1.75;
+      letter-spacing: 0.2px;
+
+      a {
+        text-decoration: none;
+        color: $bmo-blue;
+        @media all and (max-width: 480px){
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .next-button.confirmation-button {
+    width: 185px;
+    margin: 32px auto;
+    height: auto;
+  }
+
+  .error-link-text {
+    width: 195px;
+    height: 32px;
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+    color: $bmo-blue;
+
+    @media all and (max-width: 480px){
+      text-decoration: underline;
+    }
+
+    &:focus {
+      border: 3px solid $bmo-lightblue;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,291 @@
+// =============================================================================
+// String Replace
+// =============================================================================
+
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+// =============================================================================
+// Font Face
+// =============================================================================
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: ttf) {
+  $src: null;
+
+  $extmods: (
+    eot: "?",
+    svg: "#" + str-replace($name, " ", "_")
+  );
+
+  $formats: (
+    otf: "opentype",
+    ttf: "truetype"
+  );
+
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}
+
+
+/* Font Family*/
+$font-stack: Heebo, Arial, sans-serif;
+$font-stack-bold: HeeboBold, Arial, sans-serif;
+$font-stack-black: HeeboBlack, Arial, sans-serif;
+
+/* Text styles */
+@mixin font-size-xxxlarge-bold {
+  font-family: $font-stack;
+  font-size: 2.25rem;
+  font-weight: 500;
+  font-style: bold;
+  font-stretch: normal;
+  line-height: 1.11;
+  letter-spacing: -1px;
+}
+
+@mixin font-size-xxxlarge {
+  font-family: $font-stack;
+  font-size: 2.25rem;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.11;
+  letter-spacing: -1px;
+}
+
+@mixin font-size-xxxlarge-medium {
+  font-family: $font-stack;
+  font-size: 2.25rem;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.11;
+  letter-spacing: -1px;
+}
+
+@mixin font-size-xxxlarge-normal {
+  font-family: $font-stack;
+  font-size: 2.25rem;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.11;
+  letter-spacing: -1px;
+}
+
+@mixin font-size-xxxlarge {
+  font-family: $font-stack;
+  font-size: 2.25rem;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.11;
+  letter-spacing: -1px;
+}
+
+@mixin font-size-xlarge-bold {
+  font-family: $font-stack;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: -0.2px;
+}
+
+@mixin font-size-xlarge-medium {
+  font-family: $font-stack;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: -0.2px;
+}
+
+@mixin font-size-large-bold {
+  font-family: $font-stack;
+  font-size: 1.125rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+}
+
+@mixin font-size-large-medium {
+  font-family: $font-stack;
+  font-size: 1.125rem;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+}
+
+
+@mixin font-size-large {
+  font-family: $font-stack;
+  font-size: 1.125rem;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+}
+
+@mixin font-size-xlarge {
+  font-family: $font-stack;
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: -0.2px;
+}
+
+@mixin font-size-medium-bold {
+  font-family: $font-stack;
+  font-size: 1rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: 0.1px;
+}
+
+@mixin font-size-medium {
+  font-family: $font-stack;
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: 0.2px;
+}
+
+@mixin font-size-medium-normal {
+  font-family: $font-stack;
+  font-size: 1rem;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: 0.1px;
+}
+
+@mixin font-size-small-bold {
+  font-family: $font-stack;
+  font-size: 0.875rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.71;
+  letter-spacing: 0.2px;
+}
+
+@mixin font-size-small-bold {
+  font-family: $font-stack;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.2px;
+}
+
+@mixin font-size-small {
+  font-family: $font-stack;
+  font-size: 0.875rem;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.71;
+  letter-spacing: 0.2px;
+}
+
+@mixin font-size-xsmall-bold {
+  font-family: $font-stack;
+  font-size: 0.75rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: 0.5px;
+}
+
+@mixin font-size-xsmall-bold {
+  font-family: $font-stack;
+  font-size: 0.75rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+}
+
+@mixin font-size-xsmall-bold {
+  font-family: $font-stack;
+  font-size: 0.75rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: 0.5px;
+}
+
+@mixin font-size-xsmall {
+  font-family: $font-stack;
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: 0.5px;
+}
+
+@mixin font-size-xsmall {
+  font-family: $font-stack;
+  font-size: 0.75rem;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: 0.5px;
+}
+
+/* How to use mixins
+ *	.myClass {
+ *		@include font-size-xxxlarge;
+ *	}
+ */
+
+// =============================================================================
+// Base component
+// =============================================================================
+
+@mixin base-component($display: inline-block, $width: 100%) {
+  :host{
+    display: $display;
+    width: $width;
+    @content
+  }
+}
+

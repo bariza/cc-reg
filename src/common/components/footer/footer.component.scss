@@ -1,0 +1,100 @@
+@import "../../styles/variables";
+
+footer {
+  background-color: $bmo-blue;
+  //height: 72px;
+  height: 7vh;
+  min-height: 64px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: #ffffff;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  // this is commented for footer links to work for now
+  //z-index: -3;
+
+  @media screen and (min-width: 481px){
+  }
+
+  @media screen and (min-width: 481px) and (max-width: 767px){
+    justify-content: space-around;
+    padding-left: 0;
+  }
+
+  @media screen and (max-width: 480px){
+    justify-content: space-around;
+    height: 100%;
+    padding-left: 0;
+    position: relative;
+  }
+
+  .footer-links {
+    margin-left: 160px;
+    @media screen and (max-width: 1200px){
+      margin-left: 40px;
+    }
+
+    @media screen and (max-width: 767px){
+      margin-left: 0;
+      padding: 0 20px;
+    }
+
+    .footer-links-list {
+      display: flex;
+      flex-direction: row;
+      -webkit-padding-start: 0;
+      padding-left: 0;
+      align-items: center;
+      margin: 0;
+
+      @media all and (max-width: 480px){
+        flex-direction: column;
+        -moz-padding-start: 0;
+        -webkit-padding-start: 0;
+        -webkit-margin-before: 0;
+        -webkit-margin-after: 0;
+        padding: 24px 0;
+      }
+      li {
+        list-style: none;
+        margin-left: 32px;
+        -webkit-padding-start: 0;
+
+
+        &:first-child {
+          margin-left: 0;
+          margin-top: 0;
+        }
+        &:last-child{
+          margin-left:16px;
+        }
+
+        @media all and (max-width: 480px){
+          margin-left: 0;
+          margin-top: 16px;
+          text-align: center;
+          &:last-child{
+            margin-left:0;
+          }
+        }
+
+        a {
+          color: #ffffff;
+          font-size: 14px;
+          display: flex;
+          align-items: center;
+          font-weight: 500;
+          text-decoration: none;
+        }
+
+        &:not(:first-child) {
+
+        }
+      }
+    }
+  }
+}

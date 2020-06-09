@@ -1,0 +1,26 @@
+<div class="step-container landing" id="step_container">
+    <div class="form-wrapper" id="form_wrapper">
+      <div class="top-copy mt-40" id="top_copy">
+        <h1 class="title" id="title" tabindex="0">{{getTranslations().KEY.CCREG.WELCOME.TITLE | translate}}</h1>
+        <span class="copy mt-40" id="copy">
+          <p id="copy_1">{{getTranslations().KEY.CCREG.WELCOME.COPY1 | translate}}</p>
+          <p id="copy_2">{{getTranslations().KEY.CCREG.WELCOME.COPY2 | translate}}</p>
+        </span>
+      </div>
+      <div class="button-wrapper mt-40" id="button_wrapper">
+        <app-round-button class="next-button" [enabled]="true" [disabled]="false" [type]="'submit'"  [buttonId]="'next_button'"
+                          [fullTransparent]="false" (click)="welcomeSubmitted()" [ariaLabel]="'Link, Next Page' | translate" attr.data-ana="{{ getTranslations().KEY.CCREG.BUTTON.NEXT | translate | lowercase}}">{{getTranslations().KEY.CCREG.BUTTON.NEXT | translate }}
+        </app-round-button>
+      </div>
+
+      <info-text messageHeader= "{{getTranslations().KEY.CCREG.WELCOME.INFO_TEXT_HEADER | translate}}"
+                 messageBody="{{getTranslations().KEY.CCREG.WELCOME.INFO_TEXT | translate}}">
+      </info-text>
+    </div>
+    <div class="right-img mt-40" id="right_image">
+      <img src="common/assets/images/laptop-phone-paperplane.png" *ngIf="width > 480" id="desktop_img" alt="">
+      <img src="common/assets/images/t-cs-illustration.png" *ngIf="width <= 480" id="mobile_img" alt="">
+    </div>
+
+  </div>
+

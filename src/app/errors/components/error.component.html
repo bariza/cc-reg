@@ -1,0 +1,30 @@
+<div class="step-container landing" id="step_container">
+  <div class="confirmation-wrapper" id="confirmation_wrapper">
+    <div class="top-img mt-40" id="top_image">
+      <img src="common/assets/images/alert-blue.png" id="error_img" alt="" *ngIf="!timeoutError">
+      <img src="common/assets/images/timeout.png" id="timeout_img" alt="" *ngIf="timeoutError">
+    </div>
+    <div class="top-copy" id="top_copy">
+      <h1 class="title" id="title" tabindex="0" [innerHTML]="errorContainer?.title | translate" [attr.data-error]="errorContainer?.analyticsType"></h1>
+      <p class="copy" id="copy" [innerHTML]="errorContainer?.message | translate"></p>
+    </div>
+    <div *ngIf="alreadyRegistered">
+      <app-round-button class="next-button confirmation-button"
+                        [enabled]="true" [disabled]="false" [type]="'submit'"  [buttonId]="'next_button'"
+                        [fullTransparent]="false" (click)="goToSignIn()" [ariaLabel]="'Link, SIGN IN' | translate">{{ 'SIGN IN' | translate }}
+      </app-round-button>
+      <a href="{{forgotPasswordLink}}" title="Link to forgot password"
+         id="forgot_password_link" class="error-link-text">
+        {{'Forgot password?' | translate}}
+      </a>
+    </div>
+    <div *ngIf="timeoutError">
+      <app-round-button class="next-button confirmation-button"
+                        [enabled]="true" [disabled]="false" [type]="'submit'"  [buttonId]="'next_button'"
+                        attr.data-ana="{{ 'TRY AGAIN' | translate | lowercase}}"
+                        [fullTransparent]="false" (click)="goToStep0()" [ariaLabel]="'Link, TRY AGAIN' | translate">{{ 'TRY AGAIN' | translate }}
+      </app-round-button>
+    </div>
+    <div class="xl-spacer"></div>
+  </div>
+</div>

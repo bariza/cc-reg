@@ -1,0 +1,13 @@
+<span
+  class="error"
+  role="alert"
+  [id]="errorId">
+    <img [alt]="imgAlt" class="error-icon" [src]="imgSrc">
+    <span class="for-screenreader">
+      {{'Error:' | translate}}
+    </span>
+    <span
+      [innerHTML]="errorMsg | translate"
+      class="error-text">
+    </span>
+</span>

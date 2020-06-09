@@ -1,0 +1,193 @@
+<div
+  class="date-picker-container"
+  cdkTrapFocus
+  *ngIf="showDatePicker"
+  [attr.aria-hidden]="!showDatePicker"
+  [ngClass]="{ showPickerAnimation: showDatePicker }"
+  showDatePicker="showDatePicker"
+  clickOutside
+  (clickOutsideEvent)="onClose()"
+>
+  <div class="date-picker-header-container">
+    <button
+      type="button"
+      class="close-button"
+      [attr.aria-label]="'datepicker.close' | translate"
+      (click)="onClose()"
+    >
+      <img
+        class="close-icon"
+        src="common/assets/images/close-granite.svg"
+      />
+    </button>
+    <div
+      class="date-picker-header"
+      [ngClass]="{
+        animateMonthPickerHeader: showMonths,
+        animateDayPickerHeader: showDays,
+        animateYearPickerHeader: showYears
+      }"
+    >
+      <div class="years-header">
+        <div
+          id="date-picker-title-label"
+          class="header-label"
+        > {{ headerMonthLabel | translate }} {{ selectedDay }} </div>
+      </div>
+    </div>
+    <div class="back-button">
+      <!-- should merge this -->
+      <button
+        type="button"
+        class="years-back-button"
+        [attr.aria-label]="'datepicker.back' | translate"
+        *ngIf="showYears"
+        (click)="onYearsBackButtonClick()"
+      >
+        <img
+          class="back-icon"
+          src="common/assets/images/arrow-left.svg"
+        />
+      </button>
+      <button
+        type="button"
+        class="days-back-button"
+        [attr.aria-label]="'datepicker.back' | translate"
+        *ngIf="showBackButton && (showMonths || showDays)"
+        (click)="onDayBackButtonClick()"
+      >
+        <img
+          class="back-icon"
+          src="common/assets/images/arrow-left.svg"
+        />
+      </button>
+    </div>
+  </div>
+  <div
+    class="date-picker-body"
+    [ngClass]="{
+      'date-picker-full-mode': datePickerMode === DATE_PICKER_MODE.FULL,
+      'date-picker-part-mode': datePickerMode === DATE_PICKER_MODE.PART,
+      animateMonths: showMonths,
+      animateDays: showDays,
+      animateYearsModeFull:
+        showYears && datePickerMode === DATE_PICKER_MODE.FULL,
+      animateYearsModePart:
+        showYears && datePickerMode === DATE_PICKER_MODE.PART
+    }"
+  >
+    <div class="date-picker-body-section">
+      <ul
+        #monthsList
+        class="months"
+        aria-labelledby="date-picker-title-label"
+      >
+        <li
+          class="month"
+          *ngFor="let month of months"
+        >
+          <button
+            type="button"
+            [attr.aria-label]="month"
+            class="month-button"
+            (click)="onMonthSelect($event.currentTarget.innerText)"
+            [ngClass]="{ selected: selectedMonth === month }"
+          > {{ month }} </button>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="date-picker-body-section"
+      [ngClass]="{
+        'date-picker-body-section-days':
+          datePickerMode === DATE_PICKER_MODE.PART
+      }"
+    >
+      <ul
+        #daysList
+        class="days"
+        *ngIf="datePickerMode === 'Full'"
+        aria-labelledby="date-picker-date-picker-title-label"
+      >
+        <li
+          class="day"
+          *ngFor="let day of days"
+        >
+          <button
+            type="button"
+            [attr.aria-label]="day"
+            class="day-button"
+            (click)="onDaySelect($event.currentTarget.innerText)"
+            [ngClass]="{ selected: selectedDay == day }"
+          > {{ day }} </button>
+        </li>
+      </ul>
+    </div>
+    <!-- should have the decade outside and only show when its showYear -->
+    <div class="date-picker-body-section">
+      <div class="decade">
+        <div
+          #decadeButton
+          class="decade-header"
+        >
+          <button
+            type="button"
+            class="decade-back-button"
+            [attr.tabindex]="!showYears ? -1 : 0"
+            [attr.aria-label]="previousDecade | translate"
+            [attr.aria-disabled]="isMinDecade(decadeLabel)"
+            [ngClass]="{ minDecadeStyles: isMinDecade(decadeLabel) }"
+            (click)="onDecadeBackButtonClick(decadeLabel)"
+          >
+            <img
+              class="decade-next-image"
+              [src]="decadeBackImage"
+            />
+          </button>
+          <div
+            class="decade-header-label"
+            aria-live="polite"
+            [innerHTML]="decadeLabel + (decadeSuffix | translate)"
+          ></div>
+          <button
+            type="button"
+            class="decade-next-button"
+            [attr.tabindex]="!showYears ? -1 : 0"
+            [attr.aria-label]="'datepicker.nextDecade' | translate"
+            [attr.aria-disabled]="isMaxDecade(decadeLabel)"
+            (click)="onDecadeNextButtonClick(decadeLabel)"
+            [ngClass]="{ maxDecadeStyles: isMaxDecade(decadeLabel) }"
+          >
+            <img
+              class="decade-next-image"
+              [src]="decadeNextImage"
+            />
+          </button>
+        </div>
+        <ul
+          #yearsList
+          class="years"
+          aria-labelledby="title-month-day-label"
+        >
+          <li
+            class="year"
+            *ngFor="let year of years"
+          >
+            <button
+              type="button"
+              [attr.aria-label]="year"
+              [attr.aria-disabled]="isFutureYear(year)"
+              class="year-button"
+              [disabled]="isFutureYear(year)"
+              (click)="onYearSelect($event.currentTarget.innerText)"
+              [ngClass]="{
+                selected: selectedYear == year,
+                futureYearStyles: isFutureYear(year)
+              }"
+            > {{ year }} </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

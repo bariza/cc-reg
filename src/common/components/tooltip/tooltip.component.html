@@ -1,0 +1,11 @@
+<div class="info-box"
+     [ngClass]="[toolTipClass, toolTipErrorClass]"
+     [hidden]="!showToolTip"
+     aria-hidden="true">
+  <div class="top-info-wrapper">
+    <span tabindex="-1" class="tooltip-title">
+      {{tooltipTitle | translate}}
+    </span>
+  </div>
+  <ng-content></ng-content>
+</div>
